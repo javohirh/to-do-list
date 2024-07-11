@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(#64dbcf, #519ae0);
   background-repeat: no-repeat;
 }
@@ -7,7 +7,7 @@ input {
   width: 78%;
 }
 .wrapper {
-  max-width: 450px;
+  max-width: 330px;
   width: 100%;
   background-color: rgb(255, 255, 255);
 }
@@ -22,7 +22,8 @@ input {
   cursor: pointer;
   background-color: #8e49e890;
 }
-.task:hover {
+.task:hover,
+.task:active {
   cursor: pointer;
   .del {
     transform: scale(1);
