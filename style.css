@@ -1,0 +1,38 @@
+body {
+  height: 100vh;
+  background-image: linear-gradient(#64dbcf, #519ae0);
+  background-repeat: no-repeat;
+}
+input {
+  width: 78%;
+}
+.wrapper {
+  max-width: 450px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+.plus {
+  background-color: #8e49e8;
+  color: #fff;
+  max-height: 44px;
+  margin-left: 9px;
+  font-size: 25px;
+}
+.plus:hover {
+  cursor: pointer;
+  background-color: #8e49e890;
+}
+.task:hover {
+  cursor: pointer;
+  .del {
+    transform: scale(1);
+  }
+}
+
+.del {
+  color: #fff;
+  background-color: red;
+  padding: 10px;
+  transform: scale(0);
+  transition: ease 0.5s;
+}
