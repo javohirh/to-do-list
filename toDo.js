@@ -5,7 +5,7 @@ const counterEl = document.querySelector(".counter");
 
 const clearEl = document.querySelector(".btn");
 const toDos = [];
-console.log(plusEl);
+
 plusEl.addEventListener("click", () => {
   if (inputEl.value !== "") {
     toDos.push(inputEl.value);
@@ -30,7 +30,13 @@ function addTask() {
             
           
             <strong class=" ps-2" >${inputEl.value} </strong>
+            <div class="d-flex align-items-center justify-content-between gap-1">
+            <i class=" edit fa-solid fa-pen-to-square"  
+      
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"></i>
             <i class="del fa-solid fa-trash"></i>
+            </div>
           
         `;
     resultEl.appendChild(newDiv);
@@ -41,7 +47,23 @@ function addTask() {
       toDos.pop();
       counterEl.textContent = toDos.length;
     });
+    const modalEdit = document.querySelector("#modal-edit");
+    const saveChange = document.querySelector(".save");
+
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("edit")) {
+        var current = e.target;
+        modalEdit.value =
+          current.parentElement.parentElement.children[0].textContent;
+
+        saveChange.onclick = () => {
+          current.parentElement.parentElement.children[0].textContent =
+            modalEdit.value;
+        };
+      }
+    });
   }
+  inputEl.value = "";
 }
 
 clearEl.addEventListener("click", () => {

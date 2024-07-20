@@ -2,14 +2,23 @@ body {
   min-height: 100vh;
   background-image: linear-gradient(#64dbcf, #519ae0);
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 input {
   width: 78%;
 }
 .wrapper {
-  max-width: 330px;
+  max-width: 350px;
   width: 100%;
   background-color: rgb(255, 255, 255);
+}
+.result {
+  min-height: fit-content;
+  height: 100%;
+  max-height: 300px;
+  overflow-y: auto;
 }
 .plus {
   background-color: #8e49e8;
@@ -25,15 +34,20 @@ input {
 .task:hover,
 .task:active {
   cursor: pointer;
-  .del {
+  .del,
+  .edit {
     transform: scale(1);
   }
 }
 
-.del {
+.del,
+.edit {
   color: #fff;
   background-color: red;
   padding: 10px;
   transform: scale(0);
   transition: ease 0.5s;
+}
+.edit {
+  background-color: rgb(0, 162, 255);
 }
